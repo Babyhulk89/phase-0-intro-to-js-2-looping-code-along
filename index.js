@@ -1,21 +1,26 @@
-function writeCards(names, event) {
-    let thankYouMessages = [];
-    for (let i = 0; i < names.length; i++) {
-      thankYouMessages.push(`Thank you, ${names[i]}, for the wonderful ${event} gift!`);
-    }
-    return thankYouMessages;
-  }
-  
+function writeCards(names, eventName) {
+  const thankYouCards = [];
 
-  const messages = writeCards(["Guadalupe", "Ollie", "Aki"], "surprise");
-  console.log(messages);
-  
-  function countDown(num) {
-    while (num >= 0) {
-      console.log(num);
-      num--;
-    }
+  for (let i = 0; i < names.length; i++) {
+    const message = `Thank you, ${names[i]}, for the wonderful ${eventName} gift!`;
+    thankYouCards.push(message);
   }
-  
-  countDown(10);
-  
+
+  return thankYouCards;
+}
+
+const names = ["Charlie", "Samip", "Ali"];
+const eventName = "birthday";
+const thankYouCards = writeCards(names, eventName);
+
+console.log(thankYouCards);
+
+function countDown(number) {
+  while (number >= 0) {
+    console.log(number);
+    number--;
+  }
+}
+
+const startingNumber = 10;
+countDown(startingNumber);
